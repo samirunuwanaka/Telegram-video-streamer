@@ -142,7 +142,7 @@ telegram-local-video/
 
  Example:
 
-```
+```jason
 {
   "version": 1,
   "device_id": "device-001",
@@ -228,7 +228,7 @@ Possible local inference backends include:
 
  Example:
 
-```
+```python
 class LocalUpscaler:
     def __init__(self, model):
         self.model = model
@@ -264,7 +264,7 @@ class LocalUpscaler:
 
  Example command flow:
 
-```
+```mermaid
 sequenceDiagram
     participant U as User
     participant T as Telegram
@@ -286,7 +286,7 @@ sequenceDiagram
 
  Example:
 
-```
+```python
 AUTHORIZED_USERS = {
     123456789,
     987654321,
@@ -312,7 +312,7 @@ Deletion must happen **only after successful processing**.
 
  ## State machine
 
-```
+```mermaid
 stateDiagram-v2
     [*] --> PENDING
     PENDING --> UPLOADED
@@ -374,7 +374,7 @@ Logs:
 
  Example:
 
-```
+```python
 def cleanup(directory, max_age_seconds):
     """
     Delete temporary files older than the configured
@@ -564,7 +564,7 @@ data/temporary/*
 
  # 17\. End-to-End Flow
 
-```
+```mermaid
 flowchart TB
     subgraph TELEGRAM["Telegram"]
         TG[Telegram Bot / Transport]
@@ -620,7 +620,7 @@ This minimizes transferred data and keeps the computationally expensive AI proce
 
  The complete system can be represented as:
 
-```
+```mermaid
 sequenceDiagram
     participant C as Camera
     participant E as Embedded Device
@@ -655,7 +655,7 @@ sequenceDiagram
 
  Commands should follow the same authenticated communication path.
 
-```
+```mermaid
 sequenceDiagram
     participant U as User
     participant T as Telegram
@@ -681,7 +681,7 @@ sequenceDiagram
 
  A recommended packet-processing pipeline is:
 
-```
+```mermaid
 flowchart TD
     INPUT[Incoming Telegram Object]
     SIZE[Validate Size]
@@ -726,7 +726,7 @@ flowchart TD
 
  Network or processing failures should not cause the system to permanently lose state.
 
-```
+```mermaid
 stateDiagram-v2
     [*] --> CREATED
 
@@ -762,7 +762,7 @@ stateDiagram-v2
 
  Each embedded device should have an identity and revocation state.
 
-```
+```mermaid
 stateDiagram-v2
     [*] --> UNREGISTERED
 
@@ -919,7 +919,7 @@ The PC should automatically select an available local acceleration backend.
 
  The system has several distinct trust boundaries:
 
-```
+```mermaid
 flowchart LR
     USER[User]
     TELEGRAM[Telegram]
@@ -1083,7 +1083,7 @@ DEBUG password=...
 
  # 34\. Final Architecture
 
-```
+```mermaid
 flowchart TB
     subgraph EMBEDDED["Embedded Device"]
         CAMERA[Camera]
