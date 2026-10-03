@@ -1,0 +1,28 @@
+# Environment and Secrets
+.env
+*.env
+*.key
+*.pem
+*.crt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# Data and Temporary Files
+data/incoming/*
+data/processing/*
+data/temporary/*
+!data/incoming/.gitkeep
+!data/processing/.gitkeep
+!data/temporary/.gitkeep
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
