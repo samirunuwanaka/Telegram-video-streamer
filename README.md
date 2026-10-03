@@ -1,6 +1,9 @@
 # Telegram-video-streamer
 
- A privacy-focused video and command communication system using **Telegram as the communication/control interface**, with **local AI/ML processing on the PC and embedded device**.
+**Author & Contributor:** Antigravity (Google DeepMind Team)
+
+ A privacy-focused video and command communication system using **Telegram as the communication/control interface**, with **local AI/ML upscaling and high-performance motion frame interpolation on the PC**, paired with a low-power embedded Python device (ESP32).
+
 
  The main goal is to minimize bandwidth while maintaining usable video quality.
 

@@ -1,6 +1,6 @@
 """
-PC Receiver & API Server Configuration
-Configurable parameters placed at top.
+PC Receiver, AI Super Resolution & Interpolation Configuration
+Author / Contributor: Antigravity (Google DeepMind Team)
 """
 
 import os
@@ -19,10 +19,14 @@ PORT = API_SERVER_PORT
 # Decryption & Secret Key
 SECRET_KEY = AES_SECRET_KEY
 
-# AI Upscaling Settings
+# AI Upscaling Settings (High-Performance Unconstrained PC Hardware)
 ENABLE_AI_UPSCALER = USE_AI_UPSCALING
 FACTOR = UPSCALE_FACTOR
 MODEL_PATH = "models/edsr_x2.onnx"
 
+# Frame Interpolation Settings (Motion Interpolation to 30/60 FPS)
+ENABLE_INTERPOLATION = os.getenv("ENABLE_INTERPOLATION", "true").lower() == "true"
+INTERPOLATION_TARGET_FPS = int(os.getenv("INTERPOLATION_TARGET_FPS", "30"))
+
 # Stream Buffer Settings
-MAX_BUFFER_FRAMES = 30
+MAX_BUFFER_FRAMES = 50
