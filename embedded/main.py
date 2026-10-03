@@ -26,6 +26,7 @@ try:
         JPEG_QUALITY,
         SECRET_KEY,
         WAIT_FOR_ACK,
+        TELEGRAM_CHAT_ID,
     )
 except ImportError:
     # Top-level standalone fallbacks for ESP32 micro-environment
@@ -37,6 +38,7 @@ except ImportError:
     JPEG_QUALITY = 50
     SECRET_KEY = bytes.fromhex("0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef")
     WAIT_FOR_ACK = True
+    TELEGRAM_CHAT_ID = None
 
 from embedded.camera import CameraSensor
 from embedded.downscaler import Downscaler
@@ -69,6 +71,7 @@ class ESP32Streamer:
             server_url=PC_SERVER_URL,
             device_id=DEVICE_ID,
             wait_for_ack=WAIT_FOR_ACK,
+            telegram_chat_id=TELEGRAM_CHAT_ID,
         )
         self.cmd_handler = DeviceCommandHandler(self.device_state)
 
