@@ -6,6 +6,16 @@ A privacy-focused video and command communication system using **Telegram as the
 
 ---
 
+## Why Telegram Tunneling? (Zero-Cost NAT & Firewall Traversal)
+
+Connecting two geographically distant systems (e.g., an embedded camera on a remote Wi-Fi/cellular network and a home PC) typically requires expensive cloud infrastructure or complex network configurations:
+- **No Public Server IP Required**: Bypasses the need for static IP addresses, dynamic DNS setup, or port forwarding on home/remote routers.
+- **No Paid Tunneling or Hosting Fees**: Eliminates the need to purchase server hosting (VPS/AWS) or paid tunneling services (such as ngrok, localtunnel, or commercial SSH proxies), ensuring a 100% free solution for distant device communication.
+- **Automated NAT & Firewall Traversal**: Telegram Bot API acts as a secure cloud relay that operates seamlessly across restrictive firewalls, CGNAT, and mobile networks.
+- **End-to-End Payload Encryption**: Sensitive camera frames and device controls are client-encrypted (AES-GCM / HMAC) prior to transmission, ensuring privacy even when relayed through Telegram infrastructure.
+
+---
+
 ## 1. System Architecture
 
 ```mermaid
